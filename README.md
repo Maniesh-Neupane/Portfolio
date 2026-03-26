@@ -1,39 +1,27 @@
-# Portfolio
-## Visual & Methodological Interface
+# Maniesh Neupane - Professional Security Portfolio
 
-This portfolio integrates advanced animation and a clean, premium-card interface, reflecting the professionalism expected in security consulting.
+[Visit Live Site](https://manieshneupane.com.np/)
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-
-<div>
-<p align="center">
-  <img src="results/home1.png" width="400" alt="Maniesh Neupane Portfolio Header (home1.png)">
-</p>
-<p align="center"><em>Figure 1: Premium header interface (GSAP animated).</em></p>
-</div>
-
-<div>
-<p align="center">
-  <img src="results/home2.png" width="400" alt="Maniesh Neupane Professional Profile (home2.png)">
-</p>
-<p align="center"><em>Figure 2: Professional Profile and Methodology Overview.</em></p>
-</div>
-
-</div>
-
-<div style="margin-top: 20px;">
-<p align="center">
-  <img src="results/blog.png" width="820" alt="Cybersecurity Research Blog (blog.png)">
-</p>
-<p align="center"><em>Figure 3: High-Value Research Hub - The countermeasure to "Low Value Content."</em></p>
-</div>
+Professional portfolio showcasing Web Application Penetration Testing methodologies, Bug Bounty research, and cybersecurity insights.
 
 ---
 
-## Key Technology Stack
+## 🖥️ Project Previews
 
-* **HTML5 & CSS3** (Semantic SEO Structure)
-* **Tailwind CSS** (Mobile-First Utility Classes)
-* **GSAP (GreenSock)** (High-Performance Core Animations)
-* **FontAwesome** (Security & Technical Iconography)
-* **YAML** (Audit Checklist Data Structure)
+### Home Overview
+![Home Page](home1.png)
+
+### Expertise & Methodology
+![Methodology Section](home2.png)
+
+### Security Blog
+![Blog Section](blog.png)
+
+---
+
+## 🛠️ Tech Stack
+* **Frontend:** Tailwind CSS, HTML5, GSAP
+* **Security Frameworks:** OWASP Top 10, NIST, MITRE ATT&CK
+* **Research Focus:** Reconnaissance, API Security, Access Control
+
+© 2026 Maniesh Neupane
