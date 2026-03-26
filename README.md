@@ -1,4 +1,4 @@
-# Maniesh Neupane - Professional Security Portfolio
+# Maniesh Neupane - Personal Portfolio
 
 [Visit Live Site](https://manieshneupane.com.np/)
 
@@ -24,4 +24,4 @@ Professional portfolio showcasing Web Application Penetration Testing methodolog
 * **Security Frameworks:** OWASP Top 10, NIST, MITRE ATT&CK
 * **Research Focus:** Reconnaissance, API Security, Access Control
 
-© 2026 Maniesh Neupane
+                     © 2026 Maniesh Neupane
