@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Maniesh Neupane">
+    <meta name="description" content="Maniesh Neupane - Professional Web Application Penetration Tester and Security Researcher specializing in OWASP Top 10, Bug Bounty, and Vulnerability Research.">
+    <meta name="keywords" content="web application penetration testing, bug bounty, security researcher, OWASP, vulnerability assessment, ethical hacking, Nepal">
+    <meta property="og:title" content="Maniesh Neupane | Professional Security Researcher">
+    <meta property="og:description" content="Web Application Penetration Testing and Bug Bounty methodologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manieshneupane.com.np/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@pwn4arn">
+    <meta name="twitter:title" content="Maniesh Neupane | Professional Security Researcher">
+    <meta name="twitter:description" content="Web Application Penetration Testing and Bug Bounty methodologies.">
+    <title>Maniesh Neupane - Web-App Pentester</title>
+    <link rel="canonical" href="https://manieshneupane.com.np/" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6212646510612598"
+     crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maniesh Neupane",
+      "url": "https://manieshneupane.com.np",
+      "sameAs": [
+        "https://github.com/Maniesh-Neupane",
+        "https://np.linkedin.com/in/manieshneupane",
+        "https://x.com/pwn4arn"
+      ],
+      "jobTitle": "Web Application Penetration Tester",
+      "description": "Professional security researcher specializing in web application penetration testing and bug bounty hunting."
+    }
+    </script>
+
+    <style>
+        @layer base {
+            :root {
+                --primary: #1e3a8a;
+                --primary-fg: #ffffff;
+                --secondary: #d4af37;
+                --bg: #ffffff;
+                --card: #f8fafc;
+                --border: #e2e8f0;
+                --muted-fg: #64748b;
+            }
+            body {
+                font-family: 'Inter', sans-serif;
+                background: var(--bg);
+                color: var(--primary-fg);
+            }
+            h1,h2,h3,h4,h5,h6 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 700;
+            }
+        }
+        .glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+        .hero-bg {
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663271715509/FdvLgnbe4hL2xBzqAEevhN/enterprise-hero-husPU7zjHtKDarB5r2dCKm.webp');
+        }
+        .premium-card {
+            @apply bg-card border border-border rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+        }
+        .nav-underline {
+            position: relative;
+        }
+        .nav-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1e3a8a, #d4af37);
+            transition: width 0.3s ease;
+        }
+        .nav-underline:hover::after {
+            width: 100%;
+        }
+        /* Skeleton loader */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+        @keyframes shimmer {
+            0%   { background-position: -200% 0; }
+            100% { background-position:  200% 0; }
+        }
+        /* Blog card — whole card is clickable */
+        .blog-article {
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .blog-article:hover .card-title {
+            color: #1d4ed8;
+        }
+        .blog-article:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glass border-b border-slate-200 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-2xl font-bold text-blue-900">Maniesh Neupane</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="https://manieshneupane.com.np/#about" class="text-sm font-medium hover:text-blue-900 transition-colors nav-underline">About</a></li>
+                <li><a href="#expertise" class="text-sm font-medium hover:text-blue-900 transition-colors nav-underline">Expertise</a></li>
+                <li><a href="#projects" class="text-sm font-medium hover:text-blue-900 transition-colors nav-underline">Projects</a></li>
+                <li><a href="#blog-preview" class="text-sm font-medium hover:text-blue-900 transition-colors nav-underline">Latest Insights</a></li>
+                <li><a href="https://manieshneupane.com.np/blog/" class="text-sm font-medium hover:text-blue-900 transition-colors nav-underline">Blog</a></li>
+                <li><a href="https://manieshneupane.com.np/#contact" class="text-sm font-medium hover:text-blue-900 transition-colors nav-underline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 hero-bg bg-cover bg-center opacity-40 z-0"></div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center max-w-4xl">
+            <div class="space-y-8">
+                <div class="inline-block px-4 py-2 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 text-sm font-semibold">
+                    Web-App Pentester
+                </div>
+                <div class="space-y-4">
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-blue-900">
+                        Web Application Penetration Tester
+                    </h1>
+                    <p class="text-xl text-slate-600 leading-relaxed mx-auto max-w-2xl">
+                        Specializing in identifying and mitigating critical security vulnerabilities across enterprise infrastructure.
+                        With a focus on the <strong>OWASP Top 10</strong>, I provide comprehensive penetration testing,
+                        advanced threat modeling, and robust security architecture design to protect digital assets.
+                    </p>
+                    <p class="text-lg text-slate-500 leading-relaxed mx-auto max-w-2xl mt-4">
+                        As a dedicated security researcher and bug bounty hunter, I translate complex technical research
+                        into actionable security insights. My methodologies focus on deep-dive reconnaissance and
+                        responsible disclosure to ensure a hardened security posture for modern web applications.
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <a href="#contact" class="btn-primary group">
+                        Schedule Consultation <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="https://github.com/Maniesh-Neupane" target="_blank" class="btn-outline group">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-12 pt-8 border-t border-slate-200 w-full max-w-md mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-900">150+</div>
+                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">Security Bugs Identified</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-900">2+</div>
+                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24 border-t border-slate-200 bg-slate-50/50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Professional Profile</h2>
+                <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>A CyberSecurity Enthusiast, I bring deep expertise in identifying security vulnerabilities across web-applications. My work focuses on translating security research into actionable insights that protect organizational assets.</p>
+                <p>I specialize in comprehensive security assessments including web application penetration testing, API security evaluation, threat modeling, and security architecture design. My methodology emphasizes understanding business context and delivering practical, implementable security recommendations.</p>
+                <p>With recognition from leading technology companies and a commitment to responsible disclosure, I maintain the highest standards of professional ethics and security excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-24 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Core Expertise</h2>
+                <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="premium-card p-8 h-full">
+                    <div class="w-12 h-12 bg-blue-900/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Web Application Security</h3>
+                    <p class="text-slate-600">Comprehensive VAPT, API security testing, and GraphQL vulnerability assessment</p>
+                </div>
+                <div class="premium-card p-8 h-full">
+                    <div class="w-12 h-12 bg-blue-900/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-lock text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Access Control</h3>
+                    <p class="text-slate-600">Authentication bypass detection, authorization flaws, and privilege escalation analysis</p>
+                </div>
+                <div class="premium-card p-8 h-full">
+                    <div class="w-12 h-12 bg-blue-900/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Security Architecture</h3>
+                    <p class="text-slate-600">Design secure systems, implement defense-in-depth, and security best practices</p>
+                </div>
+                <div class="premium-card p-8 h-full">
+                    <div class="w-12 h-12 bg-blue-900/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-book-open text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Security Research</h3>
+                    <p class="text-slate-600">Advanced vulnerability research, zero-day analysis, and emerging threat assessment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview — Dynamic Daily Rotating from WordPress REST API -->
+    <section id="blog-preview" class="py-24 border-t border-slate-200 bg-slate-50/50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">Latest Research & Articles</h2>
+                    <div class="h-1 w-20 bg-yellow-400 rounded-full"></div>
+                    <p class="text-slate-600 mt-6 max-w-xl">
+                        Deep dives into reconnaissance methodologies, vulnerability research, and the evolving landscape of web security.
+                    </p>
+                </div>
+                <a href="https://manieshneupane.com.np/blog/" class="hidden md:flex items-center text-blue-900 font-semibold hover:text-blue-700 transition-colors mt-6 md:mt-0">
+                    View All Posts
+                </a>
+            </div>
+
+            <!-- Cards rendered by JS — skeletons shown while loading -->
+            <div id="blog-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="premium-card p-8 bg-white">
+                    <div class="skeleton h-4 w-24 mb-4"></div>
+                    <div class="skeleton h-6 w-full mb-2"></div>
+                    <div class="skeleton h-6 w-3/4 mb-6"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-5/6 mb-6"></div>
+                    <div class="skeleton h-4 w-28"></div>
+                </div>
+                <div class="premium-card p-8 bg-white">
+                    <div class="skeleton h-4 w-24 mb-4"></div>
+                    <div class="skeleton h-6 w-full mb-2"></div>
+                    <div class="skeleton h-6 w-3/4 mb-6"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-5/6 mb-6"></div>
+                    <div class="skeleton h-4 w-28"></div>
+                </div>
+                <div class="premium-card p-8 bg-white">
+                    <div class="skeleton h-4 w-24 mb-4"></div>
+                    <div class="skeleton h-6 w-full mb-2"></div>
+                    <div class="skeleton h-6 w-3/4 mb-6"></div>
+                    <div class="skeleton h-4 w-full mb-2"></div>
+                    <div class="skeleton h-4 w-5/6 mb-6"></div>
+                    <div class="skeleton h-4 w-28"></div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center md:hidden">
+                <a href="https://manieshneupane.com.np/blog/" class="btn-outline inline-flex">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Notable Projects</h2>
+                <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="premium-card p-8 h-full">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Bug Bounty Recon Methodology</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Comprehensive reconnaissance framework for identifying attack surfaces and vulnerabilities at scale.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Reconnaissance</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Methodology</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Automation</span>
+                    </div>
+                </div>
+                <div class="premium-card p-8 h-full">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Security Interview Preparation</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Curated collection of cybersecurity interview questions and answers for aspiring security professionals.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Education</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Knowledge Base</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Career</span>
+                    </div>
+                </div>
+                <div class="premium-card p-8 h-full">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Enterprise Penetration Testing</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Full-scope penetration testing engagements for Fortune 500 companies with comprehensive reporting.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">VAPT</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Enterprise</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Consulting</span>
+                    </div>
+                </div>
+                <div class="premium-card p-8 h-full">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">API Security Assessment</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Specialized API and GraphQL security testing with focus on business logic vulnerabilities.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">API Security</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">GraphQL</span>
+                        <span class="px-3 py-1 bg-blue-900/10 text-blue-900 text-xs font-medium rounded-full">Testing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-24 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Technical Skills & Tools</h2>
+                <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Penetration Testing Tools</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="px-4 py-3 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 font-medium text-sm hover:bg-blue-900/20 transition-all cursor-pointer hover:scale-105">Burp Suite Pro</div>
+                        <div class="px-4 py-3 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 font-medium text-sm hover:bg-blue-900/20 transition-all cursor-pointer hover:scale-105">Metasploit</div>
+                        <div class="px-4 py-3 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 font-medium text-sm hover:bg-blue-900/20 transition-all cursor-pointer hover:scale-105">OWASP ZAP</div>
+                        <div class="px-4 py-3 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 font-medium text-sm hover:bg-blue-900/20 transition-all cursor-pointer hover:scale-105">SQLmap</div>
+                        <div class="px-4 py-3 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 font-medium text-sm hover:bg-blue-900/20 transition-all cursor-pointer hover:scale-105">Nmap</div>
+                        <div class="px-4 py-3 bg-blue-900/10 border border-blue-900/30 rounded-lg text-blue-900 font-medium text-sm hover:bg-blue-900/20 transition-all cursor-pointer hover:scale-105">Kali Linux</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Security Frameworks</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="px-4 py-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-yellow-900 font-medium text-sm hover:bg-yellow-400/20 transition-all cursor-pointer hover:scale-105">OWASP Top 10</div>
+                        <div class="px-4 py-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-yellow-900 font-medium text-sm hover:bg-yellow-400/20 transition-all cursor-pointer hover:scale-105">NIST Cybersecurity</div>
+                        <div class="px-4 py-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-yellow-900 font-medium text-sm hover:bg-yellow-400/20 transition-all cursor-pointer hover:scale-105">CIS Controls</div>
+                        <div class="px-4 py-3 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-yellow-900 font-medium text-sm hover:bg-yellow-400/20 transition-all cursor-pointer hover:scale-105">MITRE ATT&CK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 border-t border-slate-200 bg-blue-900 text-white">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <div class="text-center space-y-8">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">Let's Collaborate</h2>
+                    <p class="text-xl opacity-90">Interested in discussing security challenges or research collaboration?</p>
+                </div>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="mailto:manieshneupane@yahoo.com" class="btn-secondary group">
+                        <i class="fas fa-envelope mr-2"></i> Email
+                    </a>
+                    <a href="https://github.com/Maniesh-Neupane" target="_blank" class="btn-outline-white group">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://x.com/pwn4arn" target="_blank" class="btn-outline-white group">
+                        <i class="fab fa-x-twitter mr-2"></i> Twitter
+                    </a>
+                    <a href="https://np.linkedin.com/in/manieshneupane" target="_blank" class="btn-outline-white group">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-200 py-12 bg-slate-50/50">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm font-medium text-slate-600">
+                <a href="https://manieshneupane.com.np/privacy-policy.html" class="hover:text-blue-900 transition-colors">Privacy Policy</a>
+                <a href="https://manieshneupane.com.np/terms.html" class="hover:text-blue-900 transition-colors">Terms & Conditions</a>
+                <a href="https://manieshneupane.com.np/disclaimer.html" class="hover:text-blue-900 transition-colors">Disclaimer</a>
+                <a href="https://manieshneupane.com.np/#about" class="hover:text-blue-900 transition-colors">About Us</a>
+                <a href="https://manieshneupane.com.np/#contact" class="hover:text-blue-900 transition-colors">Contact Us</a>
+            </div>
+            <div class="text-xs text-slate-400">
+                © 2026 Maniesh Neupane | Professional Security Research Portfolio
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── Scripts ──────────────────────────────────────────────────── -->
+    <script>
+        // GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.style.background = window.scrollY > 100 ? 'rgba(255,255,255,0.98)' : 'rgba(255,255,255,0.95)';
+        });
+
+        gsap.from('.hero > div > *', { opacity: 0, y: 30, duration: 0.8, stagger: 0.1, delay: 0.2 });
+        gsap.to('.hero img', { y: -15, duration: 4, repeat: -1, yoyo: true });
+
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section.querySelectorAll('.premium-card, h1, h2, h3, p'), {
+                scrollTrigger: { trigger: section, start: 'top 80%' },
+                opacity: 0, y: 50, duration: 0.8, stagger: 0.15
+            });
+        });
+
+        document.querySelectorAll('.premium-card, button, .btn-primary, .btn-outline, .btn-outline-white').forEach(el => {
+            el.addEventListener('mouseenter', () => gsap.to(el, { scale: 1.02, duration: 0.3 }));
+            el.addEventListener('mouseleave', () => gsap.to(el, { scale: 1, duration: 0.3 }));
+        });
+
+        // ── Daily-rotating Blog Feed ────────────────────────────────────
+        // Seeded shuffle: same 3 posts all day, different 3 the next day.
+
+        function seededRandom(seed) {
+            let s = seed >>> 0;
+            return function () {
+                s = Math.imul(s ^ (s >>> 16), 0x45d9f3b);
+                s = Math.imul(s ^ (s >>> 16), 0x45d9f3b);
+                s = (s ^ (s >>> 16)) >>> 0;
+                return s / 0xffffffff;
+            };
+        }
+
+        function getDailySeed() {
+            const d = new Date();
+            return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+        }
+
+        function shuffleWithSeed(arr, seed) {
+            const a = [...arr];
+            const rand = seededRandom(seed);
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(rand() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function stripHtml(html) {
+            const tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return (tmp.textContent || tmp.innerText || '').trim();
+        }
+
+        // ── IMPORTANT: These are YOUR actual blog post URLs ──────────────
+        // When the WP REST API is reachable, `post.link` from the API is used
+        // directly — it is always the full individual post URL.
+        // The fallback array below mirrors the real posts visible on your blog
+        // (from the screenshot). Add more posts here as you publish them.
+        const FALLBACK_POSTS = [
+            {
+                cat: 'Reconnaissance',
+                title: 'The Ultimate Bug Bounty Recon Methodology: From ASN to Exploitation',
+                excerpt: 'As a Cybersecurity Researcher, the difference between a "Duplicate" and a "Unique High-Severity" finding often lies in the depth of reconnaissance.',
+                // ← exact URL from your blog page screenshot
+                link: 'https://manieshneupane.com.np/blog/the-ultimate-bug-bounty-recon-methodology-from-asn-to-exploitation/'
+            },
+            {
+                cat: 'Web Security',
+                title: 'SQL Injection on Phone Number',
+                excerpt: 'Found SQL Injection to Account Takeover Manually — intercept the login request and inject into the mobile_number field to escalate privileges.',
+                link: 'https://manieshneupane.com.np/blog/sql-injection-on-phone-number/'
+            },
+            {
+                cat: 'Web Security',
+                title: 'XSS Technique',
+                excerpt: 'Stop reporting XSS in a boring traditional manner, and start escalating them to a high impact issue instead. Here is how.',
+                link: 'https://manieshneupane.com.np/blog/xss-technique/'
+            }
+            // ↑ Add more posts here as you publish them on your blog.
+            // Format: { cat: 'Category', title: 'Post Title', excerpt: '...', link: 'https://manieshneupane.com.np/blog/YOUR-SLUG/' }
+        ];
+
+        function buildCard(title, excerpt, cat, link) {
+            // Use an <a> tag so middle-click / open-in-new-tab works naturally
+            const a = document.createElement('a');
+            a.href    = link;           // ← direct article URL, never /blog/
+            a.target  = '_blank';       // open in new tab
+            a.rel     = 'noopener noreferrer';
+            a.className = 'blog-article premium-card flex flex-col overflow-hidden bg-white';
+
+            a.innerHTML = `
+                <div class="p-8 flex flex-col h-full">
+                    <div class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">${cat}</div>
+                    <h3 class="card-title text-xl font-bold text-blue-900 mb-4 transition-colors leading-snug">${title}</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">${excerpt}</p>
+                    <span class="text-sm font-bold text-blue-900 flex items-center w-fit group">
+                        Read More <i class="fas fa-chevron-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </div>`;
+            return a;
+        }
+
+        function renderCards(items) {
+            const container = document.getElementById('blog-cards');
+            container.innerHTML = '';
+            items.forEach(({ title, excerpt, cat, link }) => {
+                container.appendChild(buildCard(title, excerpt, cat, link));
+            });
+        }
+
+        async function loadBlogPosts() {
+            const seed = getDailySeed();
+
+            try {
+                const controller = new AbortController();
+                const timer = setTimeout(() => controller.abort(), 8000);
+
+                // WordPress REST API — `post.link` is always the full article URL
+                const res = await fetch(
+                    'https://manieshneupane.com.np/wp-json/wp/v2/posts?per_page=20&_fields=id,title,excerpt,link,date,categories',
+                    { signal: controller.signal }
+                );
+                clearTimeout(timer);
+
+                if (!res.ok) throw new Error('API ' + res.status);
+                const posts = await res.json();
+                if (!posts || posts.length === 0) throw new Error('empty');
+
+                // Fetch category names
+                const catIds = [...new Set(posts.flatMap(p => p.categories || []))];
+                let catMap = {};
+                if (catIds.length) {
+                    try {
+                        const cr = await fetch(
+                            `https://manieshneupane.com.np/wp-json/wp/v2/categories?include=${catIds.join(',')}&per_page=50`
+                        );
+                        if (cr.ok) {
+                            const cats = await cr.json();
+                            cats.forEach(c => { catMap[c.id] = c.name; });
+                        }
+                    } catch (_) {}
+                }
+
+                const normalised = posts.map(p => ({
+                    title:   stripHtml(p.title.rendered),
+                    excerpt: stripHtml(p.excerpt.rendered)
+                                .replace(/\[&hellip;\]|\[…\]/gi, '')
+                                .trim()
+                                .slice(0, 140) + '…',
+                    cat:     (p.categories && p.categories.length && catMap[p.categories[0]])
+                                 ? catMap[p.categories[0]]
+                                 : 'Web Security',
+                    // ← p.link is the direct article URL from WordPress
+                    link:    p.link
+                }));
+
+                // Daily shuffle → show 3 different posts each day
+                renderCards(shuffleWithSeed(normalised, seed).slice(0, 3));
+
+            } catch (err) {
+                console.warn('WP API unavailable — using fallback:', err.message);
+                // Fallback also rotates daily using the same seed
+                renderCards(shuffleWithSeed(FALLBACK_POSTS, seed).slice(0, 3));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    </script>
+
+    <style>
+        .btn-primary, .btn-secondary, .btn-outline-white {
+            @apply px-6 py-3 rounded-lg font-semibold transition-all flex items-center border-2 no-underline;
+        }
+        .btn-primary {
+            @apply bg-blue-900 text-white hover:bg-blue-800 hover:-translate-y-1 shadow-lg;
+        }
+        .btn-secondary {
+            @apply bg-white text-blue-900 hover:bg-slate-100 hover:-translate-y-1 shadow-lg;
+        }
+        .btn-outline-white {
+            @apply border-white text-white hover:bg-white/10 hover:-translate-y-1;
+        }
+        .btn-outline {
+            @apply border border-blue-900 text-blue-900 hover:bg-blue-900/10 hover:-translate-y-1;
+        }
+    </style>
+</body>
+</html>
