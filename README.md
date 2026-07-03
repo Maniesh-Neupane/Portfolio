@@ -11,11 +11,7 @@ Professional portfolio showcasing Web Application Penetration Testing methodolog
 ### Home Overview
 ![Home Page](home1.png)
 
-### Expertise & Methodology
-![Methodology Section](home2.png)
 
-### Security Blog
-![Blog Section](blog.png)
 
 ---
 
