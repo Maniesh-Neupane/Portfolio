@@ -9,7 +9,7 @@ Professional portfolio showcasing Web Application Penetration Testing methodolog
 ## 🖥️ Project Previews
 
 ### Home Overview
-![Home Page](home1.png)
+![Home Page](blog.png)
 
 
 
